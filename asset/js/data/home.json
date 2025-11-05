@@ -1,0 +1,34 @@
+{
+    "tools": [
+        {
+            "name": "Field Comment",
+            "local": true,
+            "external": "",
+            "page": "field-comment"
+        },
+        {
+            "name": "Getter / Setter Generator",
+            "local": true,
+            "external": "",
+            "page": "gen-getter-setter"
+        },
+        {
+            "name": "Date Time Code",
+            "local": true,
+            "external": "",
+            "page": "date-time-code"
+        },
+        {
+            "name": "Field From Data",
+            "local": true,
+            "external": "",
+            "page": "field-from-data"
+        },
+        {
+            "name": "Format HTML",
+            "local": false,
+            "external": "freeformatter.com",
+            "page": "https://www.freeformatter.com/html-formatter.html#before-output"
+        }
+    ]
+}

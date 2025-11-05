@@ -1,0 +1,4 @@
+// Age
+private Integer age;
+// Name
+String name;
