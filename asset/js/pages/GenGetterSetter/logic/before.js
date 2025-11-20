@@ -14,6 +14,12 @@ export default function before(param) {
     };
     // Lấy ra các dòng từ nội dung truyền vào
     const lines = content.split('\n');
+    // Lọc ra các dòng không rỗng
+    for (let i = lines.length - 1; i >= 0; i--) {
+        if (lines[i].trim() === '') {
+            lines.splice(i, 1);
+        }
+    }
     // Kiểm tra nếu tổng số dòng là lẻ thì báo lỗi
     if (lines.length % 2 !== 0) {
         result.error = true;

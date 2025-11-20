@@ -26,6 +26,8 @@ export default function GenGetterSetter(pageParam) {
 
     // Generate button
     const generateBtn = $('.generate-btn');
+    // Copy to clipboard button
+    const copyBtn = $('.copy-btn');
     // Getter comment format textarea
     const getterFormatTextarea = $('#GenGetterSetter_getterFormat');
     // Setter comment format textarea
@@ -36,10 +38,14 @@ export default function GenGetterSetter(pageParam) {
     const isSetterGenCheckbox = $('#GenGetterSetter_isSetterGen');
     // Auto generate checkbox
     const autoGenCheckbox = $('#GenGetterSetter_autoGenCheckbox');
+    // Auto copy checkbox
+    const autoCopyCheckbox = $('#GenGetterSetter_autoCopy');
     // Get the state of the auto generate checkbox
     const autoGenCheckboxChecked = autoGenCheckbox.checked;
     // If auto generate is checked, hide the generate button
     const fieldToGenTextarea = $('#GenGetterSetter_fieldToGen');
+    // Get the state of the auto copy checkbox
+    const autoCopyCheckboxChecked = autoCopyCheckbox.checked;
     // When clicking the generate button
     generateBtn.onclick = function() {
         const contentGen = fieldToGenTextarea.value.trim();
@@ -87,7 +93,18 @@ export default function GenGetterSetter(pageParam) {
         generateBtn.click();
         fieldToGenTextarea.onchange = function() {
             generateBtn.click();
+            if (autoCopyCheckboxChecked) {
+                copyBtn.click();
+            }
         };
+    }
+    // When clicking the copy to clipboard button
+    copyBtn.onclick = function() {
+        const resultTextarea = $('#GenGetterSetter_result');
+        resultTextarea.select(); // Select the text field
+        resultTextarea.setSelectionRange(0, 99999); // For mobile devices
+
+        navigator.clipboard.writeText(resultTextarea.value);
     }
 
     // Destroy function to clean up the page when it is no longer needed
