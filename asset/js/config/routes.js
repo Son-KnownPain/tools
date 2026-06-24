@@ -4,7 +4,7 @@
 import Home from "../pages/Home/Home.js";
 import FieldComment from "../pages/FieldComment/FieldComment.js";
 import GenGetterSetter from "../pages/GenGetterSetter/GenGetterSetter.js";
-import CSVEditor from "../pages/CSVEditor/_CSVEditor.js";
+import CSVEditor from "../pages/CSVEditor/CSVEditor.js";
 
 const routes = {
     Home: {
