@@ -1,5 +1,4 @@
 
-import { judgeWayToDestroy } from "../../common/util/pageUtil.js";
 import before from "./logic/before.js";
 import check from "./logic/check.js";
 import execute from "./logic/execute.js";
@@ -10,8 +9,6 @@ import messageNotification, { messageTypes } from "../../common/util/messageUtil
 import getMessage, { messagesIds } from "../../common/messages/messages.js";
 
 export default function GenGetterSetter(pageParam) {
-    // Judge whether to show or hide the search input based on the page context
-    judgeWayToDestroy({ isHomePage: false }).preDestroy();
     // Get the page data and query parameters
     const { data, query: { $, $$ } } = pageParam;
     // Setting defulat format and remember it
@@ -109,6 +106,6 @@ export default function GenGetterSetter(pageParam) {
 
     // Destroy function to clean up the page when it is no longer needed
     return function() {
-        judgeWayToDestroy({ isHomePage: false }).destroy();
+        
     }
 }

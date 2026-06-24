@@ -13,6 +13,12 @@
             "page": "gen-getter-setter"
         },
         {
+            "name": "CSV Editor",
+            "local": true,
+            "external": "",
+            "page": "CSV-editor"
+        },
+        {
             "name": "Date Time Code",
             "local": true,
             "external": "",

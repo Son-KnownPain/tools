@@ -79,6 +79,7 @@ function coordinate() {
                 document.title = (pageRoute.title + ' | JGen') || 'Unknown Page';
                 // If a destroy function exists, call it to clean up the previous page
                 if (destroyFunction && typeof destroyFunction === 'function') {
+                    // Call the specific destroy function for the previous page
                     destroyFunction();
                 }
                 // Call the component function with the page parameters

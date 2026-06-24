@@ -31,6 +31,12 @@ export const judgeWayToDestroy = ({ isHomePage = false }) => {
         }
     }
 };
+// Function to get the current page name from the URL
+export const getPageName = () => {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page') || 'Home';
+    return page;
+}
 // Function to get common elements used in the page
 export default function getElement() {
     // Function to get a single element by selector

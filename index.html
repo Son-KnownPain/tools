@@ -176,6 +176,178 @@
                         </div>
                     </div>
                 </div>
+                <!-- CSV Editor Page -->
+                <div data-page="CSVEditor" class="hidden">
+                    <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+                        CSV Editor
+                    </h1>
+                    <p class="mb-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Chỉnh sửa và quản lý dữ liệu CSV một cách dễ dàng với công cụ CSV Editor của chúng tôi.
+                    </p>
+                    <div data-dial-init class="fixed end-6 bottom-6 group">
+                        <div id="speed-dial-menu-default" class="flex flex-col items-center hidden mb-4 space-y-2">
+                            <button type="button" data-tooltip-target="tooltip-share" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-xs dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                                    <path d="M14.419 10.581a3.564 3.564 0 0 0-2.574 1.1l-4.756-2.49a3.54 3.54 0 0 0 .072-.71 3.55 3.55 0 0 0-.043-.428L11.67 6.1a3.56 3.56 0 1 0-.831-2.265c.006.143.02.286.043.428L6.33 6.218a3.573 3.573 0 1 0-.175 4.743l4.756 2.491a3.58 3.58 0 1 0 3.508-2.871Z"/>
+                                </svg>
+                                <span class="sr-only">Share</span>
+                            </button>
+                            <div id="tooltip-share" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                                Share
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                            <button type="button" data-tooltip-target="tooltip-print" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-xs dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z"/>
+                                    <path d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"/>
+                                </svg>
+                                <span class="sr-only">Print</span>
+                            </button>
+                            <div id="tooltip-print" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                                Print
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                            <button type="button" data-tooltip-target="tooltip-download" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-xs dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
+                                    <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                                </svg>
+                                <span class="sr-only">Download</span>
+                            </button>
+                            <div id="tooltip-download" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                                + Phải
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                            <button type="button" data-tooltip-target="tooltip-copy" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-xs dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                    <path d="M5 9V4.13a2.96 2.96 0 0 0-1.293.749L.879 7.707A2.96 2.96 0 0 0 .13 9H5Zm11.066-9H9.829a2.98 2.98 0 0 0-2.122.879L7 1.584A.987.987 0 0 0 6.766 2h4.3A3.972 3.972 0 0 1 15 6v10h1.066A1.97 1.97 0 0 0 18 14V2a1.97 1.97 0 0 0-1.934-2Z"/>
+                                    <path d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z"/>
+                                </svg>
+                                <span class="sr-only">Copy</span>
+                            </button>
+                            <div id="tooltip-copy" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                                + Trái
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                        </div>
+                        <button type="button" data-dial-toggle="speed-dial-menu-default" aria-controls="speed-dial-menu-default" aria-expanded="false" class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                            <svg class="w-5 h-5 transition-transform group-hover:rotate-45" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                            </svg>
+                            <span class="sr-only">Open actions menu</span>
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="CSVEditor_fileInput">Upload file .csv</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="CSVEditor_fileInput" type="file">
+                    </div>
+                    <div class="dark:bg-gray-800 bg-slate-200 p-4 rounded-lg mb-4 grid grid-cols-12 gap-4 mt-4">
+                        <div class="col-span-6">
+                            <label for="CSVEditor_delitmiter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Delimiter (Dấu phân cách)</label>
+                            <select id="CSVEditor_delitmiter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected value=",">Dấu phẩy (,)</option>
+                                <option value=";">Dấu chấm phẩy (;)</option>
+                                <option value="|">Gạch đứng (|)</option>
+                                <option value="\t">Tab</option>
+                                <option value=" ">Khoảng trắng</option>
+                            </select>
+                        </div>
+                        <div class="col-span-6">
+                            <label for="CSVEditor_encoding" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Encoding</label>
+                            <select id="CSVEditor_encoding" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected value="utf-8">UTF-8</option>
+                                <option value="shift-jis">Shift-JIS</option>
+                            </select>
+                        </div>
+                        <div class="col-span-12">
+                            <input id="CSVEditor_hasHeader" type="checkbox" value="1" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="CSVEditor_hasHeader" class="text-sm font-medium text-gray-900 dark:text-gray-300">
+                                Có header
+                            </label>
+                            <input id="CSVEditor_skipEmptyLine" type="checkbox" value="1" class="ml-4 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="CSVEditor_skipEmptyLine" class="text-sm font-medium text-gray-900 dark:text-gray-300">
+                                Bỏ qua dòng trống
+                            </label>
+                            <button id="CSVEditor_downloadCSVBtn" type="button" class="ml-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                                Download CSV
+                            </button>
+                            <button id="CSVEditor_saveHeaderBtn" type="button" class="ml-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                                Lưu trữ header
+                            </button>
+                            <button id="CSVEditor_addLeftBtn" type="button" class="ml-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                                Thêm trái
+                            </button>
+                            <button id="CSVEditor_addRightBtn" type="button" class="ml-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                                Thêm phải
+                            </button>
+                        </div>
+                    </div>
+                    <!-- class (grid) | (hidden)  -->
+                    <div class="hidden dark:bg-gray-800 bg-slate-200 p-4 rounded-lg mb-4 grid-cols-12 gap-4 mt-4 dark:text-gray-100 text-gray-800">
+                        <div class="col-span-12">
+                            Search
+                        </div>
+                    </div>
+                    <!-- class (grid) | (hidden)  -->
+                    <div class="hidden dark:bg-gray-800 bg-slate-200 p-4 rounded-lg mb-4 grid-cols-12 gap-4 mt-4 dark:text-gray-100 text-gray-800">
+                        <div class="col-span-12">
+                            Changes
+                        </div>
+                    </div>
+                    <div class="dark:bg-gray-800 bg-slate-200 p-4 rounded-lg mb-4 grid grid-cols-12 gap-4 mt-4 dark:text-gray-100 text-gray-800">
+                        <div class="col-span-2">
+                            Rows: <span id="CSVEditor_totalRow" class="font-semibold dark:text-yellow-300 text-yellow-700">_ / _</span>
+                            <br>
+                            Cols: <span id="CSVEditor_totalCol" class="font-semibold dark:text-green-300 text-green-700">_ / _</span>
+                        </div>
+                        <div class="col-span-8">
+                            <span class="inline-block w-16">Trước:</span> <span id="CSVEditor_beforeEdit" class="font-semibold dark:text-gray-300 text-gray-700"></span>
+                            <br>
+                            <span class="inline-block w-16">Matches:</span> <span id="CSVEditor_matchCount" class="font-semibold dark:text-gray-300 text-gray-700"></span>
+                        </div>
+                        <div class="col-span-2 text-right">
+                            <span id="CSVEditor_changeAllRow" class="font-semibold dark:text-blue-300 text-blue-700 cursor-pointer">
+                                Thay đổi tất cả
+                            </span>
+                        </div>
+                    </div>
+                    <div id="CSVEditor_tableContent" class="w-full overflow-x-auto relative mt-8 hidden">
+                        <table class="w-max border border-gray-900 dark:border-blue-300 w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                                <tr id="CSVEditor_tableContent_thList">
+                                    <th scope="col" class="px-4 py-2 bg-gray-100 dark:bg-gray-800">
+                                        Product name
+                                    </th>
+                                    <th scope="col" class="px-4 py-2">
+                                        Color
+                                    </th>
+                                    <th scope="col" class="px-4 py-2 bg-gray-100 dark:bg-gray-800">
+                                        Category
+                                    </th>
+                                    <th scope="col" class="px-4 py-2">
+                                        Price
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="CSVEditor_tableContent_trList">
+                                <tr>
+                                    <td class="bg-gray-100 dark:bg-gray-800">
+                                        <input type="text" class="px-4 py-2 border border-transparent text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-inherit" value="ABCD" spellcheck="false" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="px-4 py-2 border border-transparent text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-inherit" value="ABCD" spellcheck="false" />
+                                    </td>
+                                    <td class="bg-gray-100 dark:bg-gray-800">
+                                        <input type="text" class="px-4 py-2 border border-transparent text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-inherit" value="ABCD" spellcheck="false" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="px-4 py-2 border border-transparent text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-inherit" value="ABCD" spellcheck="false" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <!-- Date Time Code Page -->
                 <div data-page="DateTimeCode" class="hidden">
                     <p class="mb-3 text-gray-500 dark:text-gray-400">

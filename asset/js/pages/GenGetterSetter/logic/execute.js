@@ -6,8 +6,6 @@
 export default function execute(param) {
     // Lấy ra mảng fields từ tham số truyền vào
     const { fields, getterFormat, setterFormat, isGetterGen, isSetterGen } = param;
-    console.log(fields);
-    
     
     // Khởi tạo kêt quả trả về
     const result = {

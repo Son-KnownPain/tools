@@ -53,3 +53,29 @@ export function textareaRemember(id, defaultValue) {
         localStorage.setItem(keyCompiled, JSON.stringify(e.target.value));
     }
 }
+
+/**
+ * Remember select content
+ * @param {string} id element id
+ * @param {boolean} defaultValue default content
+ */
+export function selectRemember(id, defaultValue) {
+    // Define local storage key
+    const keyCompiled = KEY + id;
+    // Get value from local storage
+    const value = JSON.parse(localStorage.getItem(keyCompiled));
+    // Get select element
+    const elm = d$('#' + id);
+    // Check if element and value is existing
+    if (elm && value) {
+        elm.value = value;
+    }
+    // Else if only element is existing
+    else if (elm) {
+        elm.value = defaultValue;
+    }
+    // Listen onchange
+    elm.onchange = function(e) {
+        localStorage.setItem(keyCompiled, JSON.stringify(e.target.value));
+    }
+}

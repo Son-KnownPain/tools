@@ -11,6 +11,8 @@ export const messagesIds = {
     E0003: "E0003",
     E0004: "E0004",
     E0005: "E0005",
+    E0006: "E0006",
+    E0007: "E0007",
 }
 
 const messages = {
@@ -40,6 +42,14 @@ const messages = {
     },
     [messagesIds.E0005]: {
         content: `Dữ liệu {0} không được để trống.`,
+        type: messageTypes.ERROR,
+    },
+    [messagesIds.E0006]: {
+        content: `File csv không hợp lệ.`,
+        type: messageTypes.ERROR,
+    },
+    [messagesIds.E0007]: {
+        content: `File csv trống (không có dữ liệu).`,
         type: messageTypes.ERROR,
     },
 }
