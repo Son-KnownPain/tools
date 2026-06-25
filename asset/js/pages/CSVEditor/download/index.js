@@ -62,10 +62,15 @@ export default function handleDownload({
 
     switch (chosenEncoding) {
         case 'shift-jis':
-            // Sử dụng hàm encodeToShiftJIS bạn yêu cầu để biến chuỗi thành mảng Byte Shift-JIS "xịn"
-            const sjisByteArray = Encoding.convert(Encoding.stringToCode(csvString), { from: 'UNICODE', to: 'SHIFT_JIS' });
-            // Tạo Blob dạng nhị phân (application/octet-stream) chứa byte gốc Shift-JIS, KHÔNG CÓ BOM
-            blob = new Blob([sjisByteArray], { type: 'text/csv;charset=shift_jis;' });
+            // 1. Chuyển chuỗi String hiện tại sang mảng byte mã hóa SJIS
+            const sjisCodes = Encoding.convert(Encoding.stringToCode(csvContent), {
+                to: 'SJIS',
+                from: 'UNICODE'
+            });
+            // 2. Đưa mảng byte vào Uint8Array
+            const uint8Array = new Uint8Array(sjisCodes);
+            // 3. Tạo Blob với định dạng text/csv
+            blob = new Blob([uint8Array], { type: 'text/csv;charset=shift-jis;' });
             break;
         default:
             // Mặc định: UTF-8 với BOM (Chạy mượt cho phần lớn trường hợp còn lại)
