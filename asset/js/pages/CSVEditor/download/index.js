@@ -63,7 +63,7 @@ export default function handleDownload({
     switch (chosenEncoding) {
         case 'shift-jis':
             // 1. Chuyển chuỗi String hiện tại sang mảng byte mã hóa SJIS
-            const sjisCodes = Encoding.convert(Encoding.stringToCode(csvContent), {
+            const sjisCodes = Encoding.convert(Encoding.stringToCode(csvString), {
                 to: 'SJIS',
                 from: 'UNICODE'
             });
