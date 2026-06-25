@@ -24,7 +24,7 @@ export default function renderCsv({
             if (cellIndex % 2 === 0) {
                 cellDiff = "bg-gray-100 dark:bg-gray-800";
             }
-            return `<th data-cell-index="${cellIndex}" scope="col" class="px-4 py-2 ${cellDiff}">${cell}</th>`;
+            return `<th data-cell-index="${cellIndex}" scope="col" class="px-4 py-2 ${cellDiff} font-medium text-sm">${cell}</th>`;
         }).join("\n");
     } else {
         thList.innerHTML = "";
